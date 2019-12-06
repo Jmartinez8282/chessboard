@@ -8,11 +8,15 @@ let chessGrid = [
     ["A2", "B2", "C2", "D2", "E2", "F2", "G2", "H2"],
     ["A1", "B1", "C1", "D1", "E1", "F1", "G1", "H1"]
 ];
-
+chessGrid.map(x=> x[5]);
 
 let boardArea = document.getElementById('boardArea');
 let color = 'white';
-for(let r= 0; r<chessGrid.length;i++);
+function generateBoard(){
+    boardArea.innerHTML ='';
+
+}
+for(let r= 0; r<chessGrid.length;r++){
 let div = document.createElement('div');
 for( let c=0; c< chessGrid[r].length; c++){
     let button = document.createElement('button');
@@ -33,9 +37,34 @@ for( let c=0; c< chessGrid[r].length; c++){
         button.setAttribute('class','black-square');
         color = 'white';
     }
-    button.innerText = chessGrid[r][c];
+    
+    
 
     button.addEventListener('click',function(){
-        console.log(`Row${r},Column${c},${chessGrid[r][c]}`);
+        generateBoard();
+        squares(r,c);
+        rookSquares(r,c);
     });
+    div.appendChild(button);
+
 }
+boardArea.append(div);
+}
+}
+function rookSquares(row,column){
+    console.log(chessGrid[row][column]);
+    for(let i=0;i<8;i++){
+         document.getElementById(chessGrid[row][i]).className += ' hightligh';
+        document.getElementById(chessGrid[i][column]).className += 'highlight';
+        
+
+        
+    }
+}
+function bishopSquares(row,column){
+
+}
+function queenSquares(row,column){
+
+}
+generateBoard();

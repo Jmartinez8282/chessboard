@@ -4,5 +4,31 @@
 
 }
 button{
+    height: 4rem;
+    width: 4rem;
+    border: transparent;
     
+}
+body{
+    background-color: black;
+}
+.black-square{
+    background-color: darkolivegreen;
+    color: white;
+}
+
+.white-square{
+    background-color: beige;
+    color: black;
+}
+
+.highlight{
+    border:1px blue solid;
+}
+
+.seeing-red{
+    border-width: 1rem;
+    border-color: sienna;
+    border-style: ridge;
+
 }
